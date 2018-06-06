@@ -4,3 +4,7 @@ my-model.data-00000-of-00001
 my-model.index
 my-model.meta
 checkpoint
+notMNIST_large/
+notMNIST_small/
+notMNIST_large.tar.gz
+notMNIST_small.tar.gz
