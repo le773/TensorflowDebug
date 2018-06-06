@@ -1,0 +1,15 @@
+.ipynb_checkpoints/
+my_graph/
+my-model.data-00000-of-00001
+my-model.index
+my-model.meta
+checkpoint
+datatext8.zip
+processed/
+data/
+autoencoder/vis/
+autoencoder_answer/autoencoder/vis/
+autoencoder_answer/autoencoder/__pycache__/
+MNIST_data/
+style_transfer/
+MNIST_data/
