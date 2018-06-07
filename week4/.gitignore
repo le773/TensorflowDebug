@@ -13,3 +13,4 @@ autoencoder_answer/autoencoder/__pycache__/
 MNIST_data/
 style_transfer/
 MNIST_data/
+checkpoints/convnet_mnist/

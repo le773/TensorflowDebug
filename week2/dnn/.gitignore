@@ -3,7 +3,11 @@ my_graph/
 my-model.data-00000-of-00001
 my-model.index
 my-model.meta
+*.index
+*.meta
+*.data-00000-of-00001
 checkpoint
+notMNIST.pickle
 notMNIST_large/
 notMNIST_small/
 notMNIST_large.tar.gz

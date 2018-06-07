@@ -23,10 +23,10 @@ ERROR:tensorflow:Exception in QueueRunner: Attempted to use a closed Session.
 from matplotlib import gridspec as gridspec
 from matplotlib import pyplot as plt
 import tensorflow as tf
-
 import kernels
+import os
 
-FILENAME = '/Users/Chip/data/ImageNetDogs/Images/n02085620-Chihuahua/n02085620_4016.jpg'
+FILENAME = os.getcwd + '/../../../ImageNetDogs/n02085620-Chihuahua/n02085620_4016.jpg'
 
 
 def read_one_image(filename):
