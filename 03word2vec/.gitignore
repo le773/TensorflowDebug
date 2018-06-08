@@ -7,4 +7,5 @@ checkpoint
 datatext8.zip
 processed/
 data/
+save/
 __pycache__/

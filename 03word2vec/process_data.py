@@ -20,6 +20,7 @@ FILE_NAME = 'text8.zip'
 def download(file_name, expected_bytes):
     """ Download the dataset text8 if it's not already downloaded """
     file_path = DATA_FOLDER + file_name
+    print('DATA_FOLDER: ', DATA_FOLDER, ' file_name: ', file_name)
     if os.path.exists(file_path):
         print("Dataset ready")
         return file_path
@@ -45,7 +46,11 @@ def build_vocab(words, vocab_size):
     """ Build vocabulary of VOCAB_SIZE most frequent words """
     dictionary = dict()
     count = [('UNK', -1)]
+    # 出现次数最多的vocab_size - 1个数
     count.extend(Counter(words).most_common(vocab_size - 1))
+    print('top 4 count')
+    for i in range(1,4):
+        print(count[i])
     index = 0
     with open('processed/vocab_1000.tsv', "w") as f:
         # f.write("Name\n")
@@ -55,6 +60,12 @@ def build_vocab(words, vocab_size):
                 f.write(word + "\n")
             index += 1
     index_dictionary = dict(zip(dictionary.values(), dictionary.keys()))
+#     print('top 4 dictionary')
+#     for i in range(1,4):
+#         print(dictionary[i])
+#     print('top 4 index_dictionary')
+#     for i in range(1,4):
+#         print(index_dictionary[i])
     return dictionary, index_dictionary
 
 def convert_words_to_index(words, dictionary):
@@ -79,15 +90,30 @@ def get_batch(iterator, batch_size):
         target_batch = np.zeros([batch_size, 1])
         for index in range(batch_size):
             center_batch[index], target_batch[index] = next(iterator)
+            if index == 10:
+                pass
+                # print('center_batch[index]={}, target_batch[index]={}'.format(center_batch[index], target_batch[index]))
         yield center_batch, target_batch
 
 def process_data(vocab_size, batch_size, skip_window):
+    print('vocab_size={}, batch_size={}, skip_window={}'.format(vocab_size, batch_size, skip_window))
     file_path = download(FILE_NAME, EXPECTED_BYTES)
+    print('file_path:',file_path)
     words = read_data(file_path)
+    print('words length:{}'.format(len(words)))
+    for i in range(1,5):
+        print('words={}'.format(words[i]))
     dictionary, _ = build_vocab(words, vocab_size)
+    print('after build_vocab')
+    for i in range(1,5):
+        print('words={}'.format(words[i]))
     index_words = convert_words_to_index(words, dictionary)
+    print('after convert_words_to_index')
+    for i in range(1,5):
+        print('words={}'.format(index_words[i]))
     del words # to save memory
     single_gen = generate_sample(index_words, skip_window)
+    print('single_gen',single_gen)
     return get_batch(single_gen, batch_size)
 
 def get_index_vocab(vocab_size):
