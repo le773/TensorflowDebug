@@ -8,4 +8,5 @@ datatext8.zip
 processed/
 data/
 save/
+processed_opt/
 __pycache__/

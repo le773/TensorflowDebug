@@ -108,6 +108,7 @@ def process_data(vocab_size, batch_size, skip_window):
     for i in range(1,5):
         print('words={}'.format(words[i]))
     index_words = convert_words_to_index(words, dictionary)
+    print('type of index_words:',type(index_words))
     print('after convert_words_to_index')
     for i in range(1,5):
         print('words={}'.format(index_words[i]))
