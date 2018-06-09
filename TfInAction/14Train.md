@@ -1,4 +1,10 @@
-﻿### Saver使用
+### Saver使用
+1. 计算图
+保存所有神经网络的计算逻辑
+tf.Graph
+2. 参数
+记录神经元的参数
+tf.Variable
 ```
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
