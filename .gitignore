@@ -1,5 +1,6 @@
 TfInAction/datasets/
 datasets/
+ImageNetDogs/
 TfInAction/Chapter05/Saved_model/
 TfInAction/Chapter05/__pycache__/
 TfInAction/Chapter06/__pycache__/
