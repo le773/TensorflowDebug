@@ -7,3 +7,5 @@ TfInAction/Chapter06/__pycache__/
 data/mnsit/
 data/notMNIST.pickle
 01tensorflow/my_graph/
+07LSTM&GRU/.ipynb_checkpoints/
+07LSTM&GRU/__pycache__/
