@@ -18,17 +18,18 @@ def batch_generator(filenames):
     """ filenames is the list of files you want to read from. 
     In this case, it contains only heart.csv
     """
+    # 1.0
     filename_queue = tf.train.string_input_producer(filenames)
     reader = tf.TextLineReader(skip_header_lines=1)  # skip the first line in the file
     _, value = reader.read(filename_queue)
 
+    #2.0
     # record_defaults are the default values in case some of our columns are empty
     # This is also to tell tensorflow the format of our data (the type of the decode result)
     # for this dataset, out of 9 feature columns, 
     # 8 of them are floats (some are integers, but to make our features homogenous, 
     # we consider them floats), and 1 is string (at position 5)
     # the last column corresponds to the lable is an integer
-
     record_defaults = [[1.0] for _ in range(N_FEATURES)]
     record_defaults[4] = ['']
     record_defaults.append([1])
@@ -53,7 +54,9 @@ def batch_generator(filenames):
 
     # the maximum number of elements in the queue
     capacity = 20 * BATCH_SIZE
-
+    # min_after_dequeue是出队后，队列至少剩下min_after_dequeue个数据，如果队列中的数据不足，则等待插入新数据
+    # batch_size 队尾取出数据
+    # capacity 队列容量
     # shuffle the data to generate BATCH_SIZE sample pairs
     data_batch, label_batch = tf.train.shuffle_batch([features, label], batch_size=BATCH_SIZE,
                                                      capacity=capacity, min_after_dequeue=min_after_dequeue)

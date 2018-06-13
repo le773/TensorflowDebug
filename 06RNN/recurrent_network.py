@@ -35,7 +35,9 @@ n_hidden = 128 # hidden layer num of features
 n_classes = 10 # MNIST total classes (0-9 digits)
 
 # todo tf Graph input
+# 28 * 28
 x = tf.placeholder("float", [None, n_steps, n_input])
+# 10
 y = tf.placeholder("float", [None, n_classes])
 
 # todo Define weights and biases
