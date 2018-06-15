@@ -2,3 +2,6 @@ data/mnsit/
 simple-examples.tgz
 download/
 gpu/__pycache__/
+lstm/.ipynb_checkpoints/
+gru/.ipynb_checkpoints/
+gpu/.ipynb_checkpoints/

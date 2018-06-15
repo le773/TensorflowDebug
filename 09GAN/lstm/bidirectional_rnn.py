@@ -15,7 +15,7 @@ import numpy as np
 
 # Import MNIST data
 from tensorflow.examples.tutorials.mnist import input_data
-mnist = input_data.read_data_sets("../data/mnist", one_hot=True)
+mnist = input_data.read_data_sets("../../../data/mnist", one_hot=True)
 
 '''
 To classify images using a bidirectional recurrent neural network, we consider
@@ -118,5 +118,4 @@ with tf.Session() as sess:
     test_len = 128
     test_data = mnist.test.images[:test_len].reshape((-1, n_steps, n_input))
     test_label = mnist.test.labels[:test_len]
-    print("Testing Accuracy:", \
-        sess.run(accuracy, feed_dict={x: test_data, y: test_label}))
+    print("Testing Accuracy:", sess.run(accuracy, feed_dict={x: test_data, y: test_label}))
