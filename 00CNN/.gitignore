@@ -1,0 +1,6 @@
+log/
+data/mnsit/
+simple-examples.tgz
+download/
+__pycache__/
+.ipynb_checkpoints/

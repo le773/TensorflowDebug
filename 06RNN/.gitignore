@@ -7,6 +7,7 @@ checkpoint
 datatext8.zip
 processed/
 data/
+log/
 autoencoder/vis/
 style_transfer/.vscode/
 style_transfer/content/
