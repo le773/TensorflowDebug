@@ -1,2 +1,5 @@
 data/mnsit/
 simple-examples.tgz
+simple-examples/
+train_log/
+simple-examples.tar.gz
